@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         CheckBox box2 = (CheckBox)findViewById(R.id.box2);
         CheckBox box3 = (CheckBox)findViewById(R.id.box3);
         if(box1.isChecked() && box2.isChecked() != box3.isChecked()){
-            q3 = "Corect";
+            q3 = "Correct";
         }
         else{
             q3 = "Wrong";
