@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lesson3_QuizApp</string>
+    <string name="question1">What is the city Disneyland located? </string>
+    <string name="question2">What year is Disneyland opened?</string>
+    <string name="question3">Who is/are the disney creator(s)?</string>
+    <string name="question4">How many Disney Resort in the world?</string>
+</resources>

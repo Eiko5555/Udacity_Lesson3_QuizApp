@@ -1,0 +1,8 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="question_title_textSize">20sp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <style name="textStyle">bold</style>
+</resources>
