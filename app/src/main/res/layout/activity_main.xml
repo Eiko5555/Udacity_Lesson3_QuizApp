@@ -13,15 +13,16 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.lesson_three.eiko.lesson3_quizapp.MainActivity">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Disney Trivia"
             android:layout_gravity="center"
-            android:textSize="30sp"
-            android:textStyle="bold"
+            android:paddingBottom="@dimen/padding_10"
+            android:text="Disney Trivia"
             android:textColor="@android:color/holo_blue_dark"
-            android:paddingBottom="@dimen/padding_10"/>
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
@@ -37,11 +38,11 @@
             android:text="@string/question1" />
 
         <EditText
+            android:id="@+id/q1_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Write city name here."
-            android:id="@+id/q1_answer"
-            android:inputType="textCapSentences"/>
+            android:inputType="textCapSentences" />
 
         <TextView
             android:layout_width="match_parent"
@@ -55,8 +56,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/question2"
-            android:paddingBottom="@dimen/padding_10"/>
+            android:paddingBottom="@dimen/padding_10"
+            android:text="@string/question2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,28 +96,28 @@
                 android:orientation="vertical">
 
                 <RadioGroup
+                    android:id="@+id/radiogroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:id="@+id/radiogroup">
+                    android:layout_gravity="center">
 
                     <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/fiftyfive"
-                        android:onClick="RadioButtonClicked"/>
-
-                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="RadioButtonClicked" />
+
+                    <RadioButton
                         android:id="@+id/sixty"
-                        android:onClick="RadioButtonClicked"/>
-
-                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="RadioButtonClicked" />
+
+                    <RadioButton
                         android:id="@+id/sixtyfive"
-                        android:onClick="RadioButtonClicked"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="RadioButtonClicked" />
                 </RadioGroup>
             </LinearLayout>
         </LinearLayout>
@@ -173,19 +174,19 @@
                 android:orientation="vertical">
 
                 <CheckBox
+                    android:id="@+id/box1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/box1"/>
+                    android:layout_height="wrap_content" />
 
                 <CheckBox
+                    android:id="@+id/box2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/box2"/>
+                    android:layout_height="wrap_content" />
 
                 <CheckBox
+                    android:id="@+id/box3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/box3"/>
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
 
@@ -205,21 +206,12 @@
             android:text="@string/question4" />
 
         <EditText
+            android:id="@+id/q4answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="write here"
+            android:hint=" 0"
             android:inputType="number"
-            android:paddingBottom="@dimen/padding_10"
-            android:id="@+id/q4answer"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/allAnswers"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="@dimen/question_title_textSize"
-            android:paddingBottom="@dimen/padding_10"
-            android:paddingTop="@dimen/padding_10"
-            />
+            android:paddingBottom="@dimen/padding_10" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -229,9 +221,9 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="submit"
                 android:paddingBottom="@dimen/padding_10"
-                android:text="Submit"
-                android:onClick="submit"/>
+                android:text="Submit" />
 
             <ImageView
                 android:id="@+id/image"

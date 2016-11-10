@@ -24,89 +24,86 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void question1(String one){
-        answerForQ1 = (EditText)findViewById(R.id.q1_answer);
-       String answerq1 = answerForQ1.getText().toString();
-        if (answerq1.matches("Anaheim|anaheim")){
+
+    public void question1(String one) {
+        answerForQ1 = (EditText) findViewById(R.id.q1_answer);
+        String answerq1 = answerForQ1.getText().toString();
+        if (answerq1.matches("Anaheim")) {
             q1 = "Correct";
-            score ++;
-        }else {
+            score++;
+        }else{
             q1 = "Wrong";
         }
     }
-        public void RadioButtonClicked(View v){
-        radioGroup = (RadioGroup)findViewById(R.id.radiogroup);
-            boolean checked = ((RadioButton)v).isChecked();
-        switch (v.getId()){
-                case R.id.fiftyfive:
-                    if(checked){
-                        q2 = "Correct";
-                        score ++;
-                    }
-                    break;
+
+    public void RadioButtonClicked(View v) {
+        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        boolean checked = ((RadioButton) v).isChecked();
+        switch (v.getId()) {
+            case R.id.fiftyfive:
+                if (checked) {
+                    q2 = "Correct";
+                    score++;
+                }
+                break;
             case R.id.sixty:
-                if(checked){
+                if (checked) {
                     q2 = "Wrong";
                 }
                 break;
             case R.id.sixtyfive:
-                if(checked){
+                if (checked) {
                     q2 = "Wrong";
                 }
                 break;
         }
     }
-    public void q3checkbox(String three){
-        box1 = (CheckBox)findViewById(R.id.box1);
-        box2 = (CheckBox)findViewById(R.id.box2);
-        box3 = (CheckBox)findViewById(R.id.box3);
-        if(box1.isChecked() && box2.isChecked() && !(box3.isChecked())){
+
+    public void q3checkbox(String three) {
+        box1 = (CheckBox) findViewById(R.id.box1);
+        box2 = (CheckBox) findViewById(R.id.box2);
+        box3 = (CheckBox) findViewById(R.id.box3);
+        if (box1.isChecked() && box2.isChecked() && !(box3.isChecked())) {
             q3 = "Correct";
-            score ++;
-        }
-        else{
+            score++;
+        } else {
             q3 = "Wrong";
         }
     }
-    public void q4editText(String four){
-        q4edittext = (EditText)findViewById(R.id.q4answer);
-        String q4string = q4edittext.getText().toString();
-        int number = Integer.parseInt(q4string);
-        if(number == 6){
-            q4 = "Correct";
-            score ++;
-        }else {
-            q4 = "Wrong";
-        }
+
+    public void q4editText(String four) {
+        q4edittext = (EditText) findViewById(R.id.q4answer);
+        String q4strings = q4edittext.getText().toString();
+        if (q4strings.equals("")) {
+            q4strings="0";
+                }
+        int number = Integer.valueOf(q4strings);
+        try {
+            if (number == 6) {
+                q4 = "Correct";
+                score++;
+            } else if (!(q4strings.equals(""))) {
+                q4 = "Wrong";
+            } else
+                q4 = "Wrong";
+        }catch (NumberFormatException e){}
     }
-    public void displayAnswer(){
+
+    public void submit(View v) {
         question1(q1);
         q4editText(q4);
         q3checkbox(q3);
-        allAnswer = (TextView)findViewById(R.id.allAnswers);
-        allAnswer.setText("Q1 is "+ q1 +". Q2 is " + q2 +
-                ". Q3 is "+ q3 + ". Q4 is " + q4 +"\n Score is " +
-                score +"/4");
-    }
-
-    public void submit(View v){
-        if (clicked){
-            clicked=false;
+        String answer =("Q1 is " + q1 + ". Q2 is " + q2 +
+                ". Q3 is " + q3 + ". Q4 is " + q4 );
+            Toast.makeText(getBaseContext(), "good job. you got "
+                    + score + " correct answers."+ "\nYour answer is "+answer,
+                    Toast.LENGTH_LONG).show();
             answerForQ1.setText("");
-            radioGroup.clearCheck();
             score = 0;
+            radioGroup.clearCheck();
             box1.setChecked(false);
             box2.setChecked(false);
             box3.setChecked(false);
             q4edittext.setText("");
-            allAnswer.setText("");
-
-        }else {
-            clicked=true;
-            displayAnswer();
-            Toast.makeText(getBaseContext(), "good job",
-                    Toast.LENGTH_LONG).show();
-        }
-
     }
 }
